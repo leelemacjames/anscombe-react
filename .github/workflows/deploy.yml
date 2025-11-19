@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Use Node
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -22,10 +22,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages        # Deploys to gh-pages branch
-          folder: build           # Deploys the React build output
-
+          branch: gh-pages
+          folder: build
 
